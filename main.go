@@ -42,9 +42,12 @@ func main() {
 	}
 
 	recv := socketcan.NewReceiver(conn)
+	var count int = 0
 	for recv.Receive() {
 		frame := recv.Frame()
 		fmt.Println(frame.String())
+		count++
+		fmt.Println(count)
 	}
 
 }
