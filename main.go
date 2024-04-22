@@ -34,7 +34,7 @@ func main() {
 	defer d.SetDown()
 
 	// Receive CAN frames
-	conn, err := socketcan.DialContext(context.Background(), "vcan0", "vcan0")
+	conn, err := socketcan.DialContext(context.Background(), "vcan", "0")
 	if err != nil {
 		fmt.Println("Failed to dial socketcan:", err)
 		return
