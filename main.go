@@ -16,7 +16,7 @@ func main() {
 		return
 	}
 
-	err = d.SetBitrate(500000)
+	err = d.SetBitrate(125000)
 	if err != nil {
 		fmt.Println("Failed to set bitrate:", err)
 		return
@@ -30,7 +30,7 @@ func main() {
 	defer d.SetDown()
 
 	// Receive CAN frames
-	conn, err := socketcan.DialContext(context.Background(), "vcan", "vcan0")
+	conn, err := socketcan.DialContext(context.Background(), "can", "vcan0")
 	if err != nil {
 		fmt.Println("Failed to dial socketcan:", err)
 		return
