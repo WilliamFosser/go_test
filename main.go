@@ -9,7 +9,11 @@ import (
 
 func main() {
 	// Error handling omitted to keep example simple
-	conn, _ := socketcan.DialContext(context.Background(), "vcan", "vcan0")
+	conn, err := socketcan.DialContext(context.Background(), "vcan", "vcan0")
+	if err != nil {
+		fmt.Println("Failed to dial socketcan:", err)
+		return
+	}
 
 	recv := socketcan.NewReceiver(conn)
 	for recv.Receive() {
