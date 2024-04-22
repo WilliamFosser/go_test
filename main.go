@@ -17,18 +17,20 @@ func main() {
 	}
 
 	/*
-		err = d.SetBitrate(125000)
+			err = d.SetBitrate(125000)
+			if err != nil {
+				fmt.Println("Failed to set bitrate:", err)
+				return
+			}
+
+
+		err = d.SetUp()
 		if err != nil {
-			fmt.Println("Failed to set bitrate:", err)
+			fmt.Println("Failed to set up CAN device:", err)
 			return
 		}
-	*/
 
-	err = d.SetUp()
-	if err != nil {
-		fmt.Println("Failed to set up CAN device:", err)
-		return
-	}
+	*/
 	defer d.SetDown()
 
 	// Receive CAN frames
