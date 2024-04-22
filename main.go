@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	conn, err := socketcan.DialContext(context.Background(), "vcan", "vcan0")
+	conn, err := socketcan.DialContext(context.Background(), "vcan0", "vcan0")
 	if err != nil {
 		fmt.Println("Failed to dial socketcan:", err)
 		return
