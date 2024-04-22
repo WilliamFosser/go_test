@@ -8,6 +8,8 @@ import (
 	"go.einride.tech/can/pkg/socketcan"
 )
 
+//Fungerende fra dette tidspunkt
+
 func main() {
 	// Set up CAN interface
 	d, err := candevice.New("vcan0")
